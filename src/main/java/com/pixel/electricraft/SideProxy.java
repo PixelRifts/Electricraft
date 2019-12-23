@@ -1,5 +1,7 @@
 package com.pixel.electricraft;
 
+import com.pixel.electricraft.init.ModBlocks;
+import com.pixel.electricraft.init.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -11,23 +13,25 @@ public class SideProxy {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::commonSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::processIMC);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(ModBlocks::registerAll);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
 
         MinecraftForge.EVENT_BUS.addListener(SideProxy::serverStarting);
     }
 
-    private static void commonSetup(final FMLCommonSetupEvent e) {
+    public static void commonSetup(final FMLCommonSetupEvent e) {
         Electricraft.LOGGER.debug("Common Setup for Electricraft");
     }
 
-    private static void enqueueIMC(final InterModEnqueueEvent event) {
+    public static void enqueueIMC(final InterModEnqueueEvent event) {
 
     }
 
-    private static void processIMC(final InterModProcessEvent event) {
+    public static void processIMC(final InterModProcessEvent event) {
 
     }
 
-    private static void serverStarting(final FMLServerStartingEvent e) {
+    public static void serverStarting(final FMLServerStartingEvent e) {
 
     }
 
@@ -37,7 +41,7 @@ public class SideProxy {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(Client::clientSetup);
         }
 
-        private static void clientSetup(final FMLClientSetupEvent e) {
+        public static void clientSetup(final FMLClientSetupEvent e) {
 
         }
     }
@@ -48,7 +52,7 @@ public class SideProxy {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(Server::serverSetup);
         }
 
-        private static void serverSetup(final FMLDedicatedServerSetupEvent e) {
+        public static void serverSetup(final FMLDedicatedServerSetupEvent e) {
 
         }
     }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "electricraft:block/block_copper"
+    }
+  }
+}
