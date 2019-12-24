@@ -16,13 +16,9 @@ import java.util.Map;
 public class ModItems {
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
-    private static Item ingot_copper;
-
     public static void registerAll(final RegistryEvent.Register<Item> e) {
         if (!e.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
-
-        ingot_copper = register("ingot_copper", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     }
 
     private static <T extends Item> T register(String name, T item) {
