@@ -1,3 +1,9 @@
 {
-  "block.electricraft.block_copper": "Copper Block"
+  "block.electricraft.block_copper": "Copper Block",
+  "block.electricraft.ore_copper": "Copper Ore",
+  "item.electricraft.ingot_copper": "Copper Ingot",
+  "block.electricraft.block_silver": "Silver Block",
+  "block.electricraft.ore_silver": "Silver Ore",
+  "item.electricraft.ingot_silver": "Silver Ingot",
+  "itemGroup.electricraft": "Electricraft"
 }

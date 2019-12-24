@@ -1,8 +1,11 @@
 package com.pixel.electricraft;
 
+import com.pixel.electricraft.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -28,6 +31,13 @@ import java.util.stream.Collectors;
 public class Electricraft {
     public static final String MOD_ID = "electricraft";
     public static final Logger LOGGER = LogManager.getLogger();
+
+    public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID) {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ModBlocks.block_silver);
+        }
+    };
 
     public Electricraft() {
         DistExecutor.runForDist(

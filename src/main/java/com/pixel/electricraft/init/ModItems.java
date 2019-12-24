@@ -19,6 +19,10 @@ public class ModItems {
     public static void registerAll(final RegistryEvent.Register<Item> e) {
         if (!e.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
+
+        for (MaterialType materialType : MaterialType.values()) {
+            register("ingot_" + materialType.getName(), materialType.getStorageItem());
+        }
     }
 
     private static <T extends Item> T register(String name, T item) {
