@@ -3,6 +3,7 @@ package com.pixel.electricraft.init;
 import com.pixel.electricraft.Electricraft;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,19 +14,19 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ModItems {
+    static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
-    public static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<String, BlockItem>();
+    private static Item ingot_copper;
 
     public static void registerAll(final RegistryEvent.Register<Item> e) {
         if (!e.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
-
-        Electricraft.LOGGER.debug("ITEM REGISTRY");
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
+
+        ingot_copper = register("ingot_copper", new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
     }
 
     private static <T extends Item> T register(String name, T item) {
-        ResourceLocation id = Electricraft.getID(name);
-        item.setRegistryName(Electricraft.MOD_ID, name);
+        item.setRegistryName(Electricraft.getID(name));
         ForgeRegistries.ITEMS.register(item);
         return item;
     }

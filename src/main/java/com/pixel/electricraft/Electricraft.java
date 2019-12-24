@@ -26,7 +26,6 @@ import java.util.stream.Collectors;
 
 @Mod(value = Electricraft.MOD_ID)
 public class Electricraft {
-
     public static final String MOD_ID = "electricraft";
     public static final Logger LOGGER = LogManager.getLogger();
 

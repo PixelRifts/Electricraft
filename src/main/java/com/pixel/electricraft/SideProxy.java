@@ -1,5 +1,6 @@
 package com.pixel.electricraft;
 
+import com.pixel.electricraft.commands.SimpleGiveCommand;
 import com.pixel.electricraft.init.ModBlocks;
 import com.pixel.electricraft.init.ModItems;
 import net.minecraftforge.common.MinecraftForge;
@@ -8,7 +9,6 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 public class SideProxy {
-
     public SideProxy() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::commonSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(SideProxy::enqueueIMC);
@@ -17,6 +17,7 @@ public class SideProxy {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModItems::registerAll);
 
         MinecraftForge.EVENT_BUS.addListener(SideProxy::serverStarting);
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     public static void commonSetup(final FMLCommonSetupEvent e) {
@@ -31,8 +32,9 @@ public class SideProxy {
 
     }
 
-    public static void serverStarting(final FMLServerStartingEvent e) {
-
+    public static void serverStarting(FMLServerStartingEvent e) {
+        Electricraft.LOGGER.debug("SERVER STARTING METHOD CALLED");
+        SimpleGiveCommand.register(e.getCommandDispatcher());
     }
 
     static class Client extends SideProxy {
