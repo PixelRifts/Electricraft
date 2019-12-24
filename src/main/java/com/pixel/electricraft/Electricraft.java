@@ -49,18 +49,4 @@ public class Electricraft {
     public static ResourceLocation getID(String path) {
         return new ResourceLocation(MOD_ID, path);
     }
-
-    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents {
-
-        @SubscribeEvent
-        public static void onItemsRegistry(final RegistryEvent.Register<Item> e) {
-            LOGGER.info("HELLO from Register Item");
-        }
-
-        @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> e) {
-            LOGGER.info("HELLO from Register Block");
-        }
-    }
 }

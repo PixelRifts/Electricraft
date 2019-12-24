@@ -34,7 +34,7 @@ public class ModBlocks {
 
     private static <T extends Block> T register(String name, T block, @Nullable BlockItem item) {
         ResourceLocation id = Electricraft.getID(name);
-        block.setRegistryName(id);
+        block.setRegistryName(Electricraft.MOD_ID, name );
         ForgeRegistries.BLOCKS.register(block);
         if (item != null) {
             ModItems.BLOCKS_TO_REGISTER.put(name, item);
