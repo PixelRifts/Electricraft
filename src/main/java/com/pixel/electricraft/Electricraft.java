@@ -31,7 +31,10 @@ public class Electricraft {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public Electricraft() {
-        DistExecutor.runForDist(() -> () -> new SideProxy.Client(), () -> () -> new SideProxy.Server());
+        DistExecutor.runForDist(
+                () -> () -> new SideProxy.Client(),
+                () -> () -> new SideProxy.Server()
+        );
     }
 
     public static String getVersion() {
