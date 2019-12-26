@@ -5,5 +5,6 @@
   "block.electricraft.block_silver": "Silver Block",
   "block.electricraft.ore_silver": "Silver Ore",
   "item.electricraft.ingot_silver": "Silver Ingot",
+  "item.electricraft.knife_iron": "Iron Knife",
   "itemGroup.electricraft": "Electricraft"
 }

@@ -1,6 +1,7 @@
 package com.pixel.electricraft;
 
 import com.pixel.electricraft.init.ModBlocks;
+import com.pixel.electricraft.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
@@ -35,7 +36,7 @@ public class Electricraft {
     public static final ItemGroup ITEM_GROUP = new ItemGroup(MOD_ID) {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ModBlocks.block_silver);
+            return new ItemStack(ModItems.knife_iron);
         }
     };
 

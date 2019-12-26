@@ -11,16 +11,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nullable;
 
 public class ModBlocks {
-    public static Block block_silver;
 
     public static void registerAll(final RegistryEvent.Register<Block> e) {
         if (!e.getName().equals(ForgeRegistries.BLOCKS.getRegistryName())) return;
 
         for (MaterialType materialType : MaterialType.values()) {
-            if (materialType.getName().equals("silver")) {
-                block_silver = register( "block_" + materialType.getName(), materialType.getStorageBlock());
-                continue;
-            }
             register( "block_" + materialType.getName(), materialType.getStorageBlock());
         }
     }

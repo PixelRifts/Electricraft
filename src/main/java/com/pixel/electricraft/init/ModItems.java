@@ -1,6 +1,7 @@
 package com.pixel.electricraft.init;
 
 import com.pixel.electricraft.Electricraft;
+import com.pixel.electricraft.items.ItemKnife;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -16,6 +17,8 @@ import java.util.Map;
 public class ModItems {
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
+    public static Item knife_iron;
+
     public static void registerAll(final RegistryEvent.Register<Item> e) {
         if (!e.getName().equals(ForgeRegistries.ITEMS.getRegistryName())) return;
         BLOCKS_TO_REGISTER.forEach(ModItems::register);
@@ -23,6 +26,8 @@ public class ModItems {
         for (MaterialType materialType : MaterialType.values()) {
             register("ingot_" + materialType.getName(), materialType.getStorageItem());
         }
+
+        knife_iron = register("knife_iron", new ItemKnife());
     }
 
     private static <T extends Item> T register(String name, T item) {
