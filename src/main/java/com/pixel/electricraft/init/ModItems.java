@@ -18,7 +18,7 @@ import java.util.Map;
 public class ModItems {
     static final Map<String, BlockItem> BLOCKS_TO_REGISTER = new LinkedHashMap<>();
 
-    private static Item knife_iron;
+    public static Item knife_iron;
     private static Item hammer_iron;
 
     public static void registerAll(final RegistryEvent.Register<Item> e) {

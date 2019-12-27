@@ -46,7 +46,7 @@ public class ItemKnife extends ToolItem {
 
         @Override
         public float getAttackDamage() {
-            return 4;
+            return 1;
         }
 
         @Override

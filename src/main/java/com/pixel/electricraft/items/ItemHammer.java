@@ -12,7 +12,7 @@ import java.util.HashSet;
 
 public class ItemHammer extends ToolItem {
     public ItemHammer() {
-        super(0.5f, 1, new HammerTier(), new HashSet<>(), new Properties().group(Electricraft.ITEM_GROUP));
+        super(4, 3, new HammerTier(), new HashSet<>(), new Properties().group(Electricraft.ITEM_GROUP));
     }
 
     @Override
@@ -58,7 +58,7 @@ public class ItemHammer extends ToolItem {
 
         @Override
         public int getEnchantability() {
-            return 2;
+            return 3;
         }
 
         @Override
