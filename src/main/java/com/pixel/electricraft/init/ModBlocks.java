@@ -17,6 +17,7 @@ public class ModBlocks {
 
         for (MaterialType materialType : MaterialType.values()) {
             register( "block_" + materialType.getName(), materialType.getStorageBlock());
+            register( "ore_" + materialType.getName(), materialType.getStorageOreBlock());
         }
     }
 

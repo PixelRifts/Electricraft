@@ -14,10 +14,15 @@ public enum MaterialType {
     SILVER;
 
     private final LazyLoadBase<Block> storageBlock;
+    private final LazyLoadBase<Block> storageOreBlock;
     private final LazyLoadBase<Item> storageItem;
 
     MaterialType() {
         storageBlock = new LazyLoadBase<>(() -> new Block(Block.Properties.create(Material.IRON)
+                .hardnessAndResistance(5, 6)
+                .sound(SoundType.METAL)
+        ));
+        storageOreBlock = new LazyLoadBase<>(() -> new Block(Block.Properties.create(Material.ROCK)
                 .hardnessAndResistance(5, 6)
                 .sound(SoundType.METAL)
         ));
@@ -30,6 +35,10 @@ public enum MaterialType {
 
     public Block getStorageBlock() {
         return storageBlock.getValue();
+    }
+
+    public Block getStorageOreBlock() {
+        return storageOreBlock.getValue();
     }
 
     public Item getStorageItem() {

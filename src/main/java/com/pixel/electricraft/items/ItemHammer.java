@@ -2,15 +2,17 @@ package com.pixel.electricraft.items;
 
 import com.pixel.electricraft.Electricraft;
 import net.minecraft.block.BlockState;
-import net.minecraft.item.*;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 
 import java.util.HashSet;
 
-public class ItemKnife extends ToolItem {
-    public ItemKnife() {
-        super(0.5f, 1, new KnifeTier(), new HashSet<>(), new Item.Properties().group(Electricraft.ITEM_GROUP));
+public class ItemHammer extends ToolItem {
+    public ItemHammer() {
+        super(0.5f, 1, new HammerTier(), new HashSet<>(), new Properties().group(Electricraft.ITEM_GROUP));
     }
 
     @Override
@@ -33,10 +35,10 @@ public class ItemKnife extends ToolItem {
         return true;
     }
 
-    private static class KnifeTier implements IItemTier {
+    private static class HammerTier implements IItemTier {
         @Override
         public int getMaxUses() {
-            return 255;
+            return 1023;
         }
 
         @Override
