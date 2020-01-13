@@ -1,0 +1,10 @@
+{
+  "variants:": {
+    "facing=north": { "model": "electricraft:block/material_generator_inactive", "y": 0 },
+    "facing=south": { "model": "electricraft:block/material_generator_inactive", "y": 180 },
+    "facing=west": { "model": "electricraft:block/material_generator_inactive", "y": 270 },
+    "facing=east": { "model": "electricraft:block/material_generator_inactive", "y": 90 },
+    "facing=up": { "model": "electricraft:block/material_generator_inactive", "x": -90 },
+    "facing=down": { "model": "electricraft:block/material_generator_inactive", "x": 90 }
+  }
+}

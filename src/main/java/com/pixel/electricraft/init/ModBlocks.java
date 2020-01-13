@@ -1,6 +1,7 @@
 package com.pixel.electricraft.init;
 
 import com.pixel.electricraft.Electricraft;
+import com.pixel.electricraft.blocks.BlockMaterialGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -11,6 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nullable;
 
 public class ModBlocks {
+    private static Block material_generator;
 
     public static void registerAll(final RegistryEvent.Register<Block> e) {
         if (!e.getName().equals(ForgeRegistries.BLOCKS.getRegistryName())) return;
@@ -19,6 +21,8 @@ public class ModBlocks {
             register( "block_" + materialType.getName(), materialType.getStorageBlock());
             register( "ore_" + materialType.getName(), materialType.getStorageOreBlock());
         }
+
+        material_generator = register("material_generator", new BlockMaterialGenerator());
     }
 
     private static <T extends Block> T register(String name, T block) {

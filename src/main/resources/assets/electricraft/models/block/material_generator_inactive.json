@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "electricraft:block/material_gen_side",
+    "down": "electricraft:block/material_gen_side",
+    "up": "electricraft:block/material_gen_side",
+    "east": "electricraft:block/material_gen_side",
+    "west": "electricraft:block/material_gen_side",
+    "north": "electricraft:block/material_gen_front_inactive",
+    "south": "electricraft:block/material_gen_side"
+  }
+}
